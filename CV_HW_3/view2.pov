@@ -10,9 +10,9 @@ plane { <0, 1, 0>, 0
 }
 
 box { <0, 0, 0>, <1, 1, 1>
-    texture { pigment { color rgb <1, 0, 0> } }  
+    texture {Chrome_Metal}  
 }
 
 box { <1.5, 0, 0>, <2.5, 1, 1>
-    texture { pigment { color rgb <0, 1, 0> } }
+    texture {Brass_Metal}
 }
