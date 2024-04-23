@@ -9,9 +9,12 @@ args = parser.parse_args()
 ## [create]
 #create Background Subtractor objects
 if args.algo == 'MOG2':
-    backSub = cv.createBackgroundSubtractorMOG2(history=100)
+    backSub = cv.createBackgroundSubtractorMOG2()
+    # history=50, varThreshold =16, detectShadows=False
+    #backSub.setNMixtures(3)
 else:
-    backSub = cv.createBackgroundSubtractorKNN(history=100)
+    backSub = cv.createBackgroundSubtractorKNN()
+    # history=50, dist2Threshold=30, detectShadows=False
 ## [create]
 
 ## [capture]
@@ -30,6 +33,7 @@ while True:
     ## [apply]
     # Update the background model
     fgMask = backSub.apply(frame)
+    # learning rate
     ## [apply]
 
     kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (3,3))
