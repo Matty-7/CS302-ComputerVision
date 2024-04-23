@@ -52,7 +52,7 @@ while True:
     ## [show]
 
     keyboard = cv.waitKey(30)
-    if keyboard == 'q' or keyboard == 27:
+    if keyboard == ord('q') or keyboard == 27:
         break
 
 # When everything done, release the capture
