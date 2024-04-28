@@ -36,10 +36,16 @@ while True:
     # learning rate
     ## [apply]
 
+    # Create an elliptical structuring element for morphological operations
     kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (3,3))
+
+    # Apply morphological opening on the foreground mask to remove noise
     fgMask = cv.morphologyEx(fgMask, cv.MORPH_OPEN, kernel, iterations=2)
+
+    # Apply dilation to fill in small holes within the foreground objects
     fgMask = cv.dilate(fgMask, None, iterations=3)
 
+    # Extract the foreground objects using the foreground mask
     fgImg = cv.bitwise_and(frame, frame, mask=fgMask)
 
     ## [display_frame_number]
