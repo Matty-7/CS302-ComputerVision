@@ -8,7 +8,9 @@ def main():
 
     # Detect Players
     player_tracker = PlayerTracker(model_path="/Users/huanjingheng/CS302-ComputerVision/Tennis/models/yolov8x.pt")
-    player_detections = player_tracker.detect_frames(video_frames)
+    player_detections = player_tracker.detect_frames(video_frames,
+                                                     read_from_stub = True,
+                                                     stub_path = "tracker_stubs/player_detections.pkl")
 
     # Draw output
 
