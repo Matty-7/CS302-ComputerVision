@@ -5,7 +5,15 @@
 *.cfg
 *.log
 *.txt
+*.mov
 *.mp4
 *.pt
 *.pth
 *.pkl
+*.avi
+*.fld
+*.rek
+*.cbm
+*.pt
+*.gif
+*.pyc
